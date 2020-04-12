@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <head>
+      <style>
+        *{margin:0
+        }
+        body{
+          
+          background-color:#66ccff;
+        }
+
+        input{
+          margin:0;
+          height:100%;
+          width:80%;
+        }
+        button{
+          margin:0;
+          padding: 0;
+          height:100%;
+          width:18%;
+          font-size: 5em;
+
+        }
+
+
+      </style>
+    </head>
+    <body>
+    <canvas id="canvas" >
+    你的浏览器不支持 canvas 元素。
+    
+  </canvas>
+  <form action="" >
+    <input type='text' name="message" id='m' /><button >submit</button>
+  </form>
+  <br>
+  <!-- 日志：<pre id="log" style="border: 1px solid #ccc;"></pre> -->
+  
+  <script src='public/socket.io.js'></script>
+  <script src='https://cdn.bootcss.com/jquery/3.4.0/jquery.js'></script>
+  <script src='public/msg.js'></script>
+  <script>
+    function canvassize(width,height)
+    {
+      $('canvas').attr({
+        'width':width,
+        'height':height,
+      })
+      $('canvas').css({
+        'width':width,
+        'height':height,
+      })
+
+
+    }
+    $(document).ready(function(){
+      
+      canvassize(window.innerWidth,window.innerHeight*0.9);
+      document.documentElement.style.overflow='hidden'; 
+      document.body.style.overflow='hidden';
+      $('form').css({height:0.1*window.innerHeight});
+      $('form').submit(function(e){
+      e.preventDefault(); // prevents page reloading
+      socket.emit('inputmessage', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+
+    }
+      // document.documentElement.style.overflow='hidden'; 
+      // document.body.style.overflow='hidden';
+    )
+  </script>
+  </body>
+</html>
