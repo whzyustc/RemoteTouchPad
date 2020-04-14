@@ -47,9 +47,13 @@ Default port: 3000
 
 
 Default touchevent config:
+
 Touch move -> Mouse move
+
 One finger tap(less than 1s) -> Left click
+
 One finger tap(anoter finger hold on the right) -> Left click
+
 One finger tap(anoter finger hold on the left) -> Right click
 
 
