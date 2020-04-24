@@ -23,7 +23,7 @@ $ npm install
 
 ## Usage
 
-Start server 
+### Start server 
 
 ```bash
 $ npm start
@@ -33,7 +33,7 @@ $ node index.js
 
 
 
-Access server in LAN. 
+### Access server in LAN. 
 
 Get server IP:
 
@@ -46,7 +46,8 @@ Default port: 3000
 [Example](http://192.168.3.5:3000/)
 
 
-Default touchevent config:
+
+## Default touchevent config:
 
 Touch move -> Mouse move
 
